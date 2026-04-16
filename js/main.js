@@ -212,15 +212,11 @@
         submitBtn.textContent      = 'Enquiry Received';
         submitBtn.style.opacity    = '1';
         submitBtn.style.background = '#4a7a3a';
-        submitBtn.style.color      = var_cream();
+        submitBtn.style.color      = '#F0EFEA';
       }, 1300);
     });
   }
 
-  function var_cream() {
-    return getComputedStyle(document.documentElement)
-      .getPropertyValue('--cream').trim() || '#F0EFEA';
-  }
 
   /* ----------------------------------------------------------
      NOTIFY / REGISTER INTEREST button → contact page
