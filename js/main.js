@@ -65,80 +65,76 @@
      Cycles every 2.4s with slide-up-out / slide-down-in
   ---------------------------------------------------------- */
   /* ----------------------------------------------------------
-     UxV TYPING ANIMATION
-     Cycles: Land → Air → Water
-     Erase letter by letter backwards, then type next word forwards
-     Gives a real terminal / typewriter feel — no sudden swaps
+     UxV SLOT MACHINE ANIMATION
+     Words spin upward like a slot reel on a fixed interval.
+     Reel contains: Land → Air → Water (loops)
+     On each tick: translateY moves up by one slot height (0.9em × fontSize)
+     When last word reached, instantly reset to top (no transition) then spin again
   ---------------------------------------------------------- */
-  var UXV_WORDS  = ['Land', 'Air', 'Water'];
-  var uxvIdx     = 0;
-  var uxvEl      = document.getElementById('uxv-word');
-  var uxvSubEl   = document.getElementById('uxv-expand-word');
-  var uxvTyping  = false;
+  var UXV_WORDS   = ['Land', 'Air', 'Water'];
+  var uxvTotal    = UXV_WORDS.length;
+  var uxvCurrent  = 0;
+  var uxvReel     = document.getElementById('uxv-reel');
+  var uxvSubEl    = document.getElementById('uxv-expand-word');
+  var uxvSlot     = uxvReel ? uxvReel.parentElement : null;
 
-  var ERASE_SPEED = 80;   /* ms per character erase */
-  var TYPE_SPEED  = 110;  /* ms per character type */
-  var PAUSE_FULL  = 2200; /* ms to hold full word before erasing */
-  var PAUSE_EMPTY = 200;  /* ms pause when empty before typing next */
+  var UXV_INTERVAL  = 2400; /* ms between each spin */
+  var UXV_SPIN_DUR  = 420;  /* ms for the spin transition */
 
-  function eraseWord(word, done) {
-    if (!word.length) { done(); return; }
+  function spinUxV() {
+    if (!uxvReel) return;
+
+    var next = (uxvCurrent + 1) % uxvTotal;
+
+    /* Compute one-slot height in px from the actual rendered font */
+    var slotH = uxvSlot ? uxvSlot.offsetHeight : 0;
+    if (slotH === 0) slotH = parseInt(window.getComputedStyle(uxvReel).fontSize, 10) * 0.9;
+
+    /* Animate the reel upward by one slot */
+    uxvReel.style.transition = 'transform ' + UXV_SPIN_DUR + 'ms cubic-bezier(0.4, 0, 0.2, 1)';
+    uxvReel.style.transform  = 'translateY(-' + ((uxvCurrent + 1) * slotH) + 'px)';
+
+    /* After spin completes, update subtitle */
     setTimeout(function () {
-      var shorter = word.slice(0, -1);
-      if (uxvEl) uxvEl.textContent = shorter;
-      eraseWord(shorter, done);
-    }, ERASE_SPEED);
-  }
-
-  function typeWord(word, idx, done) {
-    if (idx > word.length) { done(); return; }
-    setTimeout(function () {
-      if (uxvEl) uxvEl.textContent = word.slice(0, idx);
-      typeWord(word, idx + 1, done);
-    }, TYPE_SPEED);
-  }
-
-  function runUxVCycle() {
-    if (uxvTyping || !uxvEl) return;
-    uxvTyping = true;
-
-    var current = UXV_WORDS[uxvIdx];
-
-    /* Hold the full word, then erase */
-    setTimeout(function () {
-      eraseWord(current, function () {
-        /* Brief pause on empty cursor */
+      if (uxvSubEl) {
+        uxvSubEl.style.transition = 'opacity 0.18s ease';
+        uxvSubEl.style.opacity    = '0';
         setTimeout(function () {
-          uxvIdx = (uxvIdx + 1) % UXV_WORDS.length;
-          var next = UXV_WORDS[uxvIdx];
-
-          /* Update subtitle when we start typing the new word */
           if (uxvSubEl) {
-            uxvSubEl.style.transition = 'opacity .18s ease';
-            uxvSubEl.style.opacity = '0';
-            setTimeout(function () {
-              uxvSubEl.textContent = next;
-              uxvSubEl.style.opacity = '1';
-            }, 180);
+            uxvSubEl.textContent     = UXV_WORDS[next];
+            uxvSubEl.style.opacity   = '1';
           }
+        }, 180);
+      }
 
-          /* Type the new word character by character */
-          typeWord(next, 1, function () {
-            uxvTyping = false;
-            /* Schedule next cycle */
-            runUxVCycle();
-          });
-        }, PAUSE_EMPTY);
-      });
-    }, PAUSE_FULL);
+      uxvCurrent = next;
+
+      /* When we've shown the last word, silently snap back to top
+         so the loop is seamless */
+      if (uxvCurrent === uxvTotal - 1) {
+        setTimeout(function () {
+          uxvReel.style.transition = 'none';
+          uxvReel.style.transform  = 'translateY(0)';
+          uxvCurrent = 0;
+          /* Re-sync subtitle to first word */
+          if (uxvSubEl) {
+            uxvSubEl.style.transition = 'none';
+            uxvSubEl.textContent      = UXV_WORDS[0];
+          }
+        }, UXV_SPIN_DUR + 80);
+      }
+
+    }, UXV_SPIN_DUR);
   }
 
-  /* Init display and start */
-  if (uxvEl) {
-    uxvEl.textContent = UXV_WORDS[0];
+  /* Init */
+  if (uxvReel) {
+    uxvReel.style.transform = 'translateY(0)';
     if (uxvSubEl) uxvSubEl.textContent = UXV_WORDS[0];
-    /* Small delay on first run so hero animations finish first */
-    setTimeout(runUxVCycle, 1800);
+    /* First spin after hero animations settle */
+    setTimeout(function () {
+      setInterval(spinUxV, UXV_INTERVAL);
+    }, 2000);
   }
 
   /* ----------------------------------------------------------
