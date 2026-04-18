@@ -3,752 +3,735 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Vikasana Systems — Indigenous autonomous defence platforms for Land, Air, and Water. Built in Bharat.">
-  <meta name="theme-color" content="#F0EFEA">
+  <meta name="description" content="Vikasana Systems — Indigenous defence and autonomous platforms for Land, Air, and Water. ROV, UAV, UGV with edge AI computing. Built in Bharat.">
+  <meta name="theme-color" content="#262924">
   <title>Vikasana Systems — Built in Bharat. Built to Endure.</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:ital,wght@0,300;0,400;0,600;0,700;0,800;1,700;1,800&family=Barlow:wght@300;400;500&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Bebas+Neue&family=Barlow+Condensed:wght@300;400;500;600;700;800&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<!-- CURSOR -->
-<div id="c-ring" aria-hidden="true"></div>
-<div id="c-dot"  aria-hidden="true"></div>
-<div id="c-h"    aria-hidden="true"></div>
-<div id="c-v"    aria-hidden="true"></div>
+  <div id="cur-ring" aria-hidden="true"></div>
+  <div id="cur-dot"  aria-hidden="true"></div>
+  <div id="cur-h"    aria-hidden="true"></div>
+  <div id="cur-v"    aria-hidden="true"></div>
 
-<!-- MOBILE NAV -->
-<div id="mob-nav" role="dialog" aria-modal="true" aria-label="Navigation">
-  <button class="mob-close" id="nav-close">[ CLOSE ]</button>
-  <a href="#" class="mob-link" data-page="home">Vikasana Systems</a>
-  <div class="mob-sub-group">
-    <a href="#" class="mob-sub" data-page="domains">Land Systems (UGV)</a>
-    <a href="#" class="mob-sub" data-page="domains">Air Systems (UAV)</a>
-    <a href="#" class="mob-sub" data-page="domains">Water Systems (ROV)</a>
-    <a href="#" class="mob-sub" data-page="domains">Software &amp; AI</a>
-    <a href="#" class="mob-sub" data-page="domains">Multi-Domain Network</a>
-  </div>
-  <div class="mob-sub-group">
-    <a href="#" class="mob-sub" data-page="technology">Engineering Doctrine</a>
-    <a href="#" class="mob-sub" data-page="technology">Edge AI</a>
-    <a href="#" class="mob-sub" data-page="technology">Sovereign Stack</a>
-  </div>
-  <a href="#" class="mob-link" data-page="about">About</a>
-  <a href="#" class="mob-link" data-page="team">Team</a>
-  <a href="#" class="mob-link" data-page="investors">Investors</a>
-  <a href="#" class="mob-link" data-page="contact">Contact</a>
-</div>
+  <!-- ============================================================
+       MOBILE NAV
+  ============================================================ -->
+  <nav id="mob-nav" aria-label="Mobile navigation" role="dialog" aria-modal="true">
+    <button class="mob-close" id="nav-close" aria-label="Close menu">[ CLOSE ]</button>
+    <a href="#" data-page="home">Home</a>
+    <a href="#" data-page="domains">Domains</a>
+    <a href="#" data-page="about">About</a>
+    <a href="#" data-page="technology">Technology</a>
+    <a href="#" data-page="investors">Investors</a>
+    <a href="#" data-page="contact">Contact</a>
+  </nav>
 
-<!-- NAV -->
-<header id="nav" role="banner">
-  <a href="#" class="nav-brand" data-page="home">VIKASANA SYSTEMS</a>
-  <ul class="nav-links" role="list">
-
-    <li class="has-drop">
-      <button class="nav-link nav-drop-btn" data-page="domains">
-        Domains
-        <svg width="9" height="5" viewBox="0 0 9 5" fill="none"><path d="M1 1L4.5 4L8 1" stroke="currentColor" stroke-width="1.2"/></svg>
-      </button>
-      <div class="drop" role="menu">
-        <a class="dd-item" href="#" data-page="domains"><span class="dd-dot" style="background:var(--land)"></span><span class="dd-body"><span class="dd-title">Land Systems</span><span class="dd-sub">UGV — Terrain Dominance</span></span></a>
-        <a class="dd-item" href="#" data-page="domains"><span class="dd-dot" style="background:var(--air)"></span><span class="dd-body"><span class="dd-title">Air Systems</span><span class="dd-sub">UAV — Fire from Above</span></span></a>
-        <a class="dd-item" href="#" data-page="domains"><span class="dd-dot" style="background:var(--water)"></span><span class="dd-body"><span class="dd-title">Water Systems</span><span class="dd-sub">ROV / USV — Ocean Sovereignty</span></span></a>
-        <a class="dd-item" href="#" data-page="domains"><span class="dd-dot" style="background:var(--forest)"></span><span class="dd-body"><span class="dd-title">Software &amp; AI</span><span class="dd-sub">Edge-native Autonomy</span></span></a>
-        <a class="dd-item" href="#" data-page="domains"><span class="dd-dot" style="background:var(--olive)"></span><span class="dd-body"><span class="dd-title">Multi-Domain Network</span><span class="dd-sub">Unified Mesh · Encrypted</span></span></a>
+  <!-- ============================================================
+       NAV
+  ============================================================ -->
+  <header id="nav" role="banner">
+    <a href="#" class="nav-brand" data-page="home" aria-label="Vikasana Systems — Home">
+      <div class="nav-brand-text">
+        <span class="nav-brand-name">Vikasana Systems</span>
+        <span class="nav-brand-sub">Defence &amp; Autonomous Platforms · India</span>
       </div>
-    </li>
-
-    <li class="has-drop">
-      <button class="nav-link nav-drop-btn" data-page="technology">
-        Technology
-        <svg width="9" height="5" viewBox="0 0 9 5" fill="none"><path d="M1 1L4.5 4L8 1" stroke="currentColor" stroke-width="1.2"/></svg>
-      </button>
-      <div class="drop" role="menu">
-        <a class="dd-item" href="#" data-page="technology"><span class="dd-dot" style="background:var(--olive)"></span><span class="dd-body"><span class="dd-title">Engineering Doctrine</span><span class="dd-sub">How We Build</span></span></a>
-        <a class="dd-item" href="#" data-page="technology"><span class="dd-dot" style="background:var(--olive)"></span><span class="dd-body"><span class="dd-title">Edge AI</span><span class="dd-sub">On-Device · Zero Cloud</span></span></a>
-        <a class="dd-item" href="#" data-page="technology"><span class="dd-dot" style="background:var(--olive)"></span><span class="dd-body"><span class="dd-title">Sovereign Stack</span><span class="dd-sub">India-Owned IP</span></span></a>
-      </div>
-    </li>
-
-    <li><a class="nav-link" href="#" data-page="about">About</a></li>
-    <li><a class="nav-link" href="#" data-page="team">Team</a></li>
-    <li><a class="nav-link" href="#" data-page="investors">Investors</a></li>
-    <li><a class="nav-link" href="#" data-page="contact">Contact</a></li>
-  </ul>
-
-  <div class="nav-right">
-    <button class="nav-engage" data-page="contact">Engage +</button>
+    </a>
+    <ul class="nav-links" role="list">
+      <li><a href="#" data-page="domains">Domains</a></li>
+      <li><a href="#" data-page="about">About</a></li>
+      <li><a href="#" data-page="technology">Technology</a></li>
+      <li><a href="#" data-page="investors">Investors</a></li>
+      <li><a href="#" data-page="contact">Contact</a></li>
+    </ul>
+    <button class="nav-cta" data-page="contact" aria-label="Engage with Vikasana Systems">Engage</button>
     <button class="nav-burger" id="nav-open" aria-label="Open menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
-  </div>
-</header>
+  </header>
 
-<!-- ================================================================
-     PAGE: HOME
-================================================================ -->
-<div id="pg-home" class="page active">
+  <!-- ================================================================
+       PAGE: HOME
+  ================================================================ -->
+  <div id="pg-home" class="page active">
 
-  <section class="hero">
-    <div class="hero-bg">
-      <video id="hero-vid" autoplay muted loop playsinline preload="none" poster="assets/img/invester.png">
-        <source src="assets/video/army.webm" type="video/webm">
-      </video>
-      <!-- Fallback image if video missing -->
-      <img class="hero-fallback" src="https://images.unsplash.com/photo-1547483238-f400e65ccd56?w=1600&q=70&auto=format&fit=crop" alt="" aria-hidden="true">
+    <!-- HERO -->
+    <section id="hero" aria-label="Hero">
+      <div class="hero-video-wrap" aria-hidden="true">
+        <video id="hero-vid" autoplay muted loop playsinline preload="none" poster="./assets/img/invester.png">
+          <source src="assets/video/army.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="hero-grid" aria-hidden="true"></div>
+      <div class="hero-scan" aria-hidden="true"></div>
+      <div class="reticle tl" aria-hidden="true"></div>
+      <div class="reticle tr" aria-hidden="true"></div>
+      <div class="reticle bl" aria-hidden="true"></div>
+      <div class="reticle br" aria-hidden="true"></div>
+
+      <div class="hero-content">
+        <p class="hero-eyebrow">Vikasana Systems · India · Est. 2024</p>
+        <h1 class="hero-title">
+          Built<br>
+          <span class="ghost">in</span><br>
+          <span class="accent">Bharat.</span>
+        </h1>
+        <p class="hero-tagline">Built to Endure.</p>
+        <p class="hero-desc">
+          Indigenous autonomous systems for Land, Air, and Water —
+          edge AI, offgrid, no radio silence.
+        </p>
+        <div class="hero-actions">
+          <button class="btn-primary" data-page="domains">Our Domains</button>
+          <button class="btn-ghost"   data-page="investors">Investor Relations</button>
+        </div>
+      </div>
+
+      <div class="hero-strip" aria-hidden="true">
+        <div class="strip-item">
+          <span class="strip-item-label">Domain</span>
+          <span class="strip-item-val">Land · Air · Water</span>
+        </div>
+        <div class="strip-item">
+          <span class="strip-item-label">Compute</span>
+          <span class="strip-item-val">Edge AI · Offgrid</span>
+        </div>
+        <div class="strip-item">
+          <span class="strip-item-label">Comms</span>
+          <span class="strip-item-val">LPI / LPD</span>
+        </div>
+        <div class="strip-item">
+          <span class="strip-item-label">Platform</span>
+          <span class="strip-item-val">UGV · UAV · ROV · USV</span>
+        </div>
+        <div class="strip-live">
+          <div class="live-dot"></div>
+          Systems Active
+        </div>
+      </div>
+    </section>
+
+    <!-- STAT STRIP — what we build -->
+    <div class="stat-strip">
+      <div class="stat-cell">
+        <div class="stat-num">3</div>
+        <div class="stat-label">Physical Domains<br>Land · Air · Water</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-num">&lt;5W</div>
+        <div class="stat-label">Edge AI Inference<br>On-device · No cloud</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-num">LPI</div>
+        <div class="stat-label">Communications<br>Low Probability of Intercept</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-num">100%</div>
+        <div class="stat-label">India Origin<br>Design · Engineering · Assembly</div>
+      </div>
     </div>
-    <div class="hero-grid"    aria-hidden="true"></div>
-    <div class="hero-scan"    aria-hidden="true"></div>
-    <div class="ret tl"       aria-hidden="true"></div>
-    <div class="ret tr"       aria-hidden="true"></div>
-    <div class="ret bl"       aria-hidden="true"></div>
-    <div class="ret br"       aria-hidden="true"></div>
 
-    <div class="hero-content">
-      <p class="hero-eyebrow">Vikasana Systems · India · Est. 2024</p>
-      <h1 class="hero-title">
-        BUILT IN<br>
-        <span class="accent">BHARAT.</span>
-      </h1>
-      <p class="hero-tagline">Built to Endure.</p>
-      <p class="hero-desc">
-        Indigenous autonomous systems for Land, Air, and Water — no radio silence,
-        edge AI, offgrid. Over 75% domestic content.
+    <!-- PRODUCTS PREVIEW — Drishtikon + Chakshu -->
+    <div class="products-home">
+      <div class="ph-header">
+        <div class="section-label">Active Products</div>
+      </div>
+      <div class="ph-grid">
+
+        <!-- DRISHTIKON -->
+        <button class="ph-card" data-page="domains">
+          <div class="ph-card-top">
+            <div class="ph-prod-id">PRD-01 · Software &amp; AI</div>
+            <div class="ph-status ph-status-active">Active</div>
+          </div>
+          <div class="ph-prod-name">Drishtikon</div>
+          <div class="ph-prod-sub">Universal Ground Control System</div>
+          <p class="ph-prod-desc">MAVLink 2.0 GCS for simultaneous command of up to 3 heterogeneous UAV platforms — fixed-wing, VTOL, multi-rotor. Live 10Hz telemetry, waypoint mission planning, EO/IR payload management, and AI object detection overlay. Web + Electron deployment.</p>
+          <div class="ph-specs-row">
+            <div class="ph-spec"><span class="ph-sl">Protocol</span><span class="ph-sv">MAVLink 2.0</span></div>
+            <div class="ph-spec"><span class="ph-sl">Max UAVs</span><span class="ph-sv">3 concurrent</span></div>
+            <div class="ph-spec"><span class="ph-sl">Telem Rate</span><span class="ph-sv">10 Hz</span></div>
+            <div class="ph-spec"><span class="ph-sl">Payloads</span><span class="ph-sv">EO · IR · WA</span></div>
+            <div class="ph-spec"><span class="ph-sl">Platforms</span><span class="ph-sv">Fixed · VTOL · Rotor</span></div>
+            <div class="ph-spec"><span class="ph-sl">Deployment</span><span class="ph-sv">Web · Electron</span></div>
+          </div>
+          <div class="ph-tags">
+            <span class="ph-tag">UAV Command</span>
+            <span class="ph-tag">Live Telemetry</span>
+            <span class="ph-tag">Mission Planning</span>
+            <span class="ph-tag">AI Detect</span>
+          </div>
+          <div class="ph-cta">View Details &rarr;</div>
+        </button>
+
+        <!-- CHAKSHU -->
+        <button class="ph-card" data-page="domains">
+          <div class="ph-card-top">
+            <div class="ph-prod-id">PRD-02 · Air Systems / Supporting Equipment</div>
+            <div class="ph-status ph-status-dev">Phase I</div>
+          </div>
+          <div class="ph-prod-name">Chakshu GPB</div>
+          <div class="ph-prod-sub">MIL-Grade Graphics Processing Board</div>
+          <p class="ph-prod-desc">3U MIL-standard Graphics Processing Board for airborne cockpit and mission display systems. Processes and overlays video from ARINC-818-2 optical, ARINC-818-2 copper, and STANAG 3350B sources simultaneously. OpenGL 2.0 rendering with Picture-in-Picture, anti-aliasing, and AGC circuitry. CEMILAC ATP in progress — HAL/DPSU programme.</p>
+          <div class="ph-specs-row">
+            <div class="ph-spec"><span class="ph-sl">Platform</span><span class="ph-sv">3U MIL / VPX</span></div>
+            <div class="ph-spec"><span class="ph-sl">Optical BW</span><span class="ph-sv">4.25 Gbps</span></div>
+            <div class="ph-spec"><span class="ph-sl">Graphics API</span><span class="ph-sv">OpenGL 2.0</span></div>
+            <div class="ph-spec"><span class="ph-sl">Video In</span><span class="ph-sv">5 channels</span></div>
+            <div class="ph-spec"><span class="ph-sl">Video Out</span><span class="ph-sv">OPT·LVDS·DVI</span></div>
+            <div class="ph-spec"><span class="ph-sl">Bus</span><span class="ph-sv">PCIe Gen3 · XMC</span></div>
+          </div>
+          <div class="ph-tags">
+            <span class="ph-tag">ARINC-818-2</span>
+            <span class="ph-tag">STANAG 3350B</span>
+            <span class="ph-tag">CEMILAC</span>
+            <span class="ph-tag">HAL DPSU</span>
+          </div>
+          <div class="ph-cta">View Details &rarr;</div>
+        </button>
+
+      </div>
+    </div>
+
+    <!-- CTA band -->
+    <section id="cta" aria-label="Call to action">
+      <h2 class="cta-title reveal">Command<br><span>with</span><br>Certainty.</h2>
+      <p class="cta-sub reveal rd1">Vikasana Systems · India · info@vikasanasystems.tech</p>
+      <div class="cta-actions reveal rd2">
+        <button class="btn-primary" data-page="contact">Engage with Us</button>
+        <button class="btn-ghost"   data-page="domains">Explore Domains</button>
+      </div>
+    </section>
+
+    <footer id="footer" role="contentinfo">
+      <div class="footer-main">
+        <div class="footer-brand">
+          <div class="nav-brand-text">
+            <span class="nav-brand-name">Vikasana Systems</span>
+            <span class="nav-brand-sub">Built in Bharat. Built to Endure.</span>
+          </div>
+          <p class="footer-brand-text">Indigenous defence and autonomous platforms for Land, Air, and Water. Hardware. Software. AI-native. Mission-ready.</p>
+          <div class="footer-badges">
+            <span class="fb-badge">Make in India</span>
+            <span class="fb-badge">MSME Registered</span>
+            <span class="fb-badge">Atmanirbhar Bharat</span>
+            <span class="fb-badge">iDEX Participant</span>
+          </div>
+        </div>
+        <div>
+          <div class="footer-col-title">Domains</div>
+          <ul class="footer-col-links" role="list">
+            <li><button data-page="domains">Land — UGV</button></li>
+            <li><button data-page="domains">Air — UAV</button></li>
+            <li><button data-page="domains">Water — ROV / USV</button></li>
+            <li><button data-page="domains">Software &amp; AI</button></li>
+            <li><button data-page="domains">Supporting Equipment</button></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-col-title">Company</div>
+          <ul class="footer-col-links" role="list">
+            <li><button data-page="about">About Us</button></li>
+            <li><button data-page="technology">Technology</button></li>
+            <li><button data-page="investors">Investors</button></li>
+            <li><button data-page="contact">Contact</button></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-col-title">Contact</div>
+          <ul class="footer-col-links" role="list">
+            <li><a href="mailto:info@vikasanasystems.tech">info@vikasanasystems.tech</a></li>
+            <li><button data-page="contact">Procurement</button></li>
+            <li><button data-page="investors">Investor Deck</button></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span class="footer-copy">&copy; 2026 Vikasana Systems · India · All Rights Reserved</span>
+        <div class="footer-legal-links">
+          <button class="footer-legal-btn" data-page="terms">Terms &amp; Conditions</button>
+          <span class="footer-legal-sep">·</span>
+          <button class="footer-legal-btn" data-page="privacy">Privacy Policy</button>
+          <span class="footer-legal-sep">·</span>
+          <span class="footer-copy">Defence Technology · info@vikasanasystems.tech</span>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- ================================================================
+       PAGE: DOMAINS
+  ================================================================ -->
+  <div id="pg-domains" class="page">
+    <div class="inner-page">
+      <div class="section-label reveal">Operating Domains</div>
+
+      <!-- UxV cycling heading — replaces "LAND. AIR. WATER." -->
+      <div class="uxv-domains-wrap reveal rd1" aria-label="Unmanned Land/Air/Water Vehicle platforms">
+        <div class="uxv-display">
+          <span class="uxv-u">U</span><span class="uxv-mid" id="uxv-word">Land</span><span class="uxv-cursor-block" aria-hidden="true"></span><span class="uxv-v">V</span>
+        </div>
+        <p class="uxv-expand">Unmanned <span id="uxv-expand-word">Land</span> Vehicle</p>
+      </div>
+
+      <p class="page-intro reveal rd2">
+        Vikasana Systems operates across the three primary physical domains of modern conflict — building indigenous autonomous platforms engineered to work in concert as a unified multi-domain network.
       </p>
-      <div class="hero-cta">
-        <button class="btn-dark" data-page="domains">Explore Domains</button>
-        <button class="btn-outline" data-page="investors">Investor Relations</button>
+
+      <div class="domain-grid">
+        <div class="domain-card reveal rd1">
+          <div class="dc-num">DOM-01</div>
+          <div class="dc-icon" aria-hidden="true">
+            <svg width="44" height="44" viewBox="0 0 44 44" fill="none"><rect x="1.5" y="1.5" width="41" height="41" stroke="#6F7A60" stroke-width="0.8" opacity="0.3"/><rect x="8" y="18" width="28" height="14" fill="none" stroke="#AEB6A8" stroke-width="1.3"/><rect x="13" y="13" width="18" height="8" fill="none" stroke="#AEB6A8" stroke-width="1.1"/><circle cx="14" cy="32" r="3.5" fill="none" stroke="#AEB6A8" stroke-width="1.2"/><circle cx="30" cy="32" r="3.5" fill="none" stroke="#AEB6A8" stroke-width="1.2"/><line x1="24" y1="13" x2="31" y2="8" stroke="#6F7A60" stroke-width="1.2"/><circle cx="31" cy="8" r="1.5" fill="#6F7A60"/></svg>
+          </div>
+          <div class="dc-title">Land Systems</div>
+          <div class="dc-desc">Unmanned Ground Vehicles (UGV) built for reconnaissance, perimeter security, and logistics support. Autonomous navigation with terrain-adaptive control and silent electric drive. Designed to operate where putting a soldier at risk is unacceptable.</div>
+          <div class="dc-tags"><span class="dc-tag">UGV</span><span class="dc-tag">Autonomous Nav</span><span class="dc-tag">Perimeter Security</span><span class="dc-tag">Logistics</span></div>
+        </div>
+        <div class="domain-card reveal rd2">
+          <div class="dc-num">DOM-02</div>
+          <div class="dc-icon" aria-hidden="true">
+            <svg width="44" height="44" viewBox="0 0 44 44" fill="none"><rect x="1.5" y="1.5" width="41" height="41" stroke="#6F7A60" stroke-width="0.8" opacity="0.3"/><path d="M22 8 L29 22 L38 24 L29 30 L31 38 L22 34 L13 38 L15 30 L6 24 L15 22 Z" fill="none" stroke="#AEB6A8" stroke-width="1.3"/><circle cx="22" cy="22" r="5" fill="none" stroke="#AEB6A8" stroke-width="1.2"/><circle cx="22" cy="22" r="2" fill="#AEB6A8"/></svg>
+          </div>
+          <div class="dc-title">Air Systems</div>
+          <div class="dc-desc">Fixed-wing and multi-rotor UAVs designed for ISR, target acquisition, and electronic warfare support. Low acoustic signature, extended endurance, and fully encrypted C2 with no radio silence requirement using LPI/LPD waveforms.</div>
+          <div class="dc-tags"><span class="dc-tag">UAV</span><span class="dc-tag">ISR</span><span class="dc-tag">Fixed-Wing</span><span class="dc-tag">VTOL</span><span class="dc-tag">LPI/LPD</span></div>
+        </div>
+        <div class="domain-card reveal rd3">
+          <div class="dc-num">DOM-03</div>
+          <div class="dc-icon" aria-hidden="true">
+            <svg width="44" height="44" viewBox="0 0 44 44" fill="none"><rect x="1.5" y="1.5" width="41" height="41" stroke="#6F7A60" stroke-width="0.8" opacity="0.3"/><path d="M6 30 Q10 23 14 30 Q18 37 22 30 Q26 23 30 30 Q34 37 38 30" fill="none" stroke="#AEB6A8" stroke-width="1.3"/><path d="M11 26 L22 14 L33 26" fill="none" stroke="#AEB6A8" stroke-width="1.2"/><line x1="22" y1="14" x2="22" y2="30" stroke="#6F7A60" stroke-width="1"/><circle cx="22" cy="12" r="2" fill="#6F7A60"/></svg>
+          </div>
+          <div class="dc-title">Water Systems</div>
+          <div class="dc-desc">Remotely Operated Vehicles (ROV) and Unmanned Surface Vessels (USV) for coastal patrol, underwater inspection, mine detection, and maritime domain awareness. Autonomous NMEA-fused navigation with acoustic positioning.</div>
+          <div class="dc-tags"><span class="dc-tag">ROV</span><span class="dc-tag">USV</span><span class="dc-tag">Coastal Patrol</span><span class="dc-tag">Mine Detection</span></div>
+        </div>
+        <div class="domain-card reveal rd4">
+          <div class="dc-num">DOM-04</div>
+          <div class="dc-icon" aria-hidden="true">
+            <svg width="44" height="44" viewBox="0 0 44 44" fill="none"><rect x="1.5" y="1.5" width="41" height="41" stroke="#6F7A60" stroke-width="0.8" opacity="0.3"/><rect x="8" y="12" width="28" height="20" rx="1" fill="none" stroke="#AEB6A8" stroke-width="1.3"/><line x1="8" y1="19" x2="36" y2="19" stroke="#AEB6A8" stroke-width="0.8" opacity="0.3"/><line x1="13" y1="24" x2="24" y2="24" stroke="#AEB6A8" stroke-width="1.1"/><line x1="13" y1="28" x2="20" y2="28" stroke="#AEB6A8" stroke-width="1.1"/><circle cx="31" cy="34" r="5" fill="none" stroke="#AEB6A8" stroke-width="1.2"/><line x1="34.5" y1="37.5" x2="37" y2="40" stroke="#AEB6A8" stroke-width="1.6"/><circle cx="31" cy="34" r="2" fill="#6F7A60"/></svg>
+          </div>
+          <div class="dc-title">Software &amp; AI</div>
+          <div class="dc-desc">Edge-native AI inference, computer vision, and C2 software running entirely on-device — no cloud, no latency, no dependency. Multi-platform GCS, sensor fusion middleware, and autonomous decision layers designed for contested electromagnetic environments.</div>
+          <div class="dc-tags"><span class="dc-tag">Edge AI</span><span class="dc-tag">Computer Vision</span><span class="dc-tag">GCS</span><span class="dc-tag">Sensor Fusion</span></div>
+        </div>
+        <div class="domain-card reveal rd1">
+          <div class="dc-num">DOM-05</div>
+          <div class="dc-icon" aria-hidden="true">
+            <svg width="44" height="44" viewBox="0 0 44 44" fill="none"><rect x="1.5" y="1.5" width="41" height="41" stroke="#6F7A60" stroke-width="0.8" opacity="0.3"/><circle cx="22" cy="22" r="14" fill="none" stroke="#AEB6A8" stroke-width="1.2" opacity="0.35"/><circle cx="22" cy="22" r="7" fill="none" stroke="#AEB6A8" stroke-width="1.3"/><line x1="22" y1="8" x2="22" y2="15" stroke="#AEB6A8" stroke-width="1.3"/><line x1="22" y1="29" x2="22" y2="36" stroke="#AEB6A8" stroke-width="1.3"/><line x1="8" y1="22" x2="15" y2="22" stroke="#AEB6A8" stroke-width="1.3"/><line x1="29" y1="22" x2="36" y2="22" stroke="#AEB6A8" stroke-width="1.3"/><circle cx="22" cy="22" r="2.5" fill="#AEB6A8"/></svg>
+          </div>
+          <div class="dc-title">Supporting Equipment</div>
+          <div class="dc-desc">Portable ground stations, encrypted datalink hardware, battery and power management systems, ruggedised sensor packages, and field-deployable edge compute modules — all designed to complement and extend the Vikasana platform ecosystem.</div>
+          <div class="dc-tags"><span class="dc-tag">Ground Stations</span><span class="dc-tag">Datalink HW</span><span class="dc-tag">Power Systems</span><span class="dc-tag">Edge Compute</span></div>
+        </div>
+        <div class="domain-card reveal rd2">
+          <div class="dc-num">DOM-06</div>
+          <div class="dc-icon" aria-hidden="true">
+            <svg width="44" height="44" viewBox="0 0 44 44" fill="none"><rect x="1.5" y="1.5" width="41" height="41" stroke="#6F7A60" stroke-width="0.8" opacity="0.3"/><polygon points="22,8 36,22 22,36 8,22" fill="none" stroke="#AEB6A8" stroke-width="1.3"/><polygon points="22,15 29,22 22,29 15,22" fill="rgba(111,122,96,0.18)"/><circle cx="22" cy="22" r="3.5" fill="none" stroke="#AEB6A8" stroke-width="1.2"/><circle cx="22" cy="22" r="1.5" fill="#AEB6A8"/><line x1="22" y1="8" x2="22" y2="15" stroke="#6F7A60" stroke-width="1"/><line x1="22" y1="29" x2="22" y2="36" stroke="#6F7A60" stroke-width="1"/><line x1="8" y1="22" x2="15" y2="22" stroke="#6F7A60" stroke-width="1"/><line x1="29" y1="22" x2="36" y2="22" stroke="#6F7A60" stroke-width="1"/></svg>
+          </div>
+          <div class="dc-title">Multi-Domain Network</div>
+          <div class="dc-desc">All Vikasana platforms interoperate as a unified mesh. A UGV on the ground, a UAV overhead, and an ROV offshore share situational awareness through a common encrypted, low-probability-of-intercept data fabric — with zero cloud infrastructure.</div>
+          <div class="dc-tags"><span class="dc-tag">Mesh Networking</span><span class="dc-tag">Multi-Domain</span><span class="dc-tag">Offgrid</span><span class="dc-tag">Encrypted</span></div>
+        </div>
+      </div>
+
+      <div class="products-soon reveal">
+        <div class="ps-left">
+          <div class="ps-tag">Platform Status</div>
+          <div class="ps-title">Products — Listing Soon</div>
+          <div class="ps-desc">Specific product lines across the ROV, UAV, and UGV domains are under active development. Technical specifications, payload configurations, and procurement details will be published upon readiness. Register interest to be notified at launch.</div>
+        </div>
+        <div class="ps-right">
+          <div class="ps-badge">In Development</div>
+          <div class="ps-badge">Q4 2025 Target</div>
+          <button class="ps-notify" data-page="contact">Register Interest</button>
+        </div>
       </div>
     </div>
-
-    <div class="hero-strip" aria-hidden="true">
-      <div class="strip-cell"><span class="sc-lbl">Domain</span><span class="sc-val">Land · Air · Water</span></div>
-      <div class="strip-cell"><span class="sc-lbl">Indigenous Content</span><span class="sc-val">&ge;75%</span></div>
-      <div class="strip-cell"><span class="sc-lbl">Compute</span><span class="sc-val">Edge AI · Offgrid</span></div>
-      <div class="strip-cell"><span class="sc-lbl">Comms</span><span class="sc-val">LPI / LPD</span></div>
-      <div class="strip-cell"><span class="sc-lbl">Origin</span><span class="sc-val">India</span></div>
-      <div class="strip-live"><div class="live-dot"></div>Systems Active</div>
-    </div>
-  </section>
-
-  <div class="domain-cards">
-    <a class="dc dc-land" href="#" data-page="domains" aria-label="Land Systems">
-      <img src="./assets/img/land.png" alt="Military tank — Land Systems">
-      <div class="dc-overlay"></div>
-      <div class="dc-content">
-        <div class="dc-num">DOM-01 · Land</div>
-        <div class="dc-name">Land Systems</div>
-        <div class="dc-sub">Terrain Dominance</div>
-        <div class="dc-arrow">Enter &rarr;</div>
-      </div>
-    </a>
-    <a class="dc dc-air" href="#" data-page="domains" aria-label="Air Systems">
-      <img src="./assets/img/drone.png" alt="Military drone — Air Systems">
-      <div class="dc-overlay"></div>
-      <div class="dc-content">
-        <div class="dc-num">DOM-02 · Air</div>
-        <div class="dc-name">Air Systems</div>
-        <div class="dc-sub">Fire from Above</div>
-        <div class="dc-arrow">Enter &rarr;</div>
-      </div>
-    </a>
-    <a class="dc dc-water" href="#" data-page="domains" aria-label="Water Systems">
-      <img src="./assets/img/underwater.png" alt="Naval vessel — Water Systems">
-      <div class="dc-overlay"></div>
-      <div class="dc-content">
-        <div class="dc-num">DOM-03 · Water</div>
-        <div class="dc-name">Water Systems</div>
-        <div class="dc-sub">Ocean Sovereignty</div>
-        <div class="dc-arrow">Enter &rarr;</div>
-      </div>
-    </a>
+    <section id="cta" aria-label="Call to action">
+      <h2 class="cta-title reveal">Command<br><span>with</span><br>Certainty.</h2>
+      <div class="cta-actions reveal rd1"><button class="btn-primary" data-page="contact">Engage with Us</button></div>
+    </section>
+    <div class="slim-footer"><span class="footer-copy">&copy; 2026 Vikasana Systems · India · All Rights Reserved</span></div>
   </div>
 
-  <div class="news-row">
-    <div class="news-card">
-      <div class="news-date">Q1 2025</div>
-      <div class="news-title">Vikasana Systems completes first UGV field prototype trials across three terrain types</div>
-      <div class="news-read">Read more</div>
-    </div>
-    <div class="news-card">
-      <div class="news-date">Q4 2024</div>
-      <div class="news-title">Edge AI inference pipeline achieves sub-5W power envelope on embedded hardware</div>
-      <div class="news-read">Read more</div>
-    </div>
-    <div class="news-card">
-      <div class="news-date">Q3 2024</div>
-      <div class="news-title">DPIIT registration secured — Make in India compliance confirmed</div>
-      <div class="news-read">Read more</div>
-    </div>
+  <!-- ================================================================
+       PAGE: ABOUT
+  ================================================================ -->
+  <div id="pg-about" class="page">
+    <section id="about" aria-labelledby="about-heading">
+      <div class="about-media reveal rd1">
+        <!-- Pexels royalty-free: Defence/Tech atmosphere — placeholder until official footage -->
+        <video autoplay muted loop playsinline
+          poster="./assets/img/invester.png"
+          aria-label="Vikasana Systems engineering team at work">
+          <source src="./assets/video/ugv.webm" type="video/webm">
+        </video>
+        <div class="about-media-overlay"></div>
+        <div class="about-media-note">AI-generated placeholder · Official footage coming soon</div>
+        <div class="brkt tl" aria-hidden="true"></div>
+        <div class="brkt tr" aria-hidden="true"></div>
+        <div class="brkt bl" aria-hidden="true"></div>
+        <div class="brkt br" aria-hidden="true"></div>
+      </div>
+      <div class="about-text-wrap">
+        <div class="section-label reveal rd1">Our DNA</div>
+        <h2 id="about-heading" class="section-title reveal rd2">Forged<br><em>in India.</em></h2>
+        <p class="about-lead reveal rd3">We build what the mission demands — not what the catalogue offers.</p>
+        <p class="about-body reveal rd3">Vikasana Systems is an Indian defence and autonomous technology company building integrated hardware-software platforms across land, air, and maritime domains. Every system we ship is designed, engineered, and assembled in India — from embedded firmware to AI inference pipelines.</p>
+        <p class="about-body reveal rd3">Our platforms are conceived for low-signature, no-radio-silence operations. Portable. Compact. Powered by edge AI running completely off-grid, consuming a fraction of the energy of comparable Western systems.</p>
+        <div class="about-stats reveal rd4">
+          <div class="about-stat">
+            <div class="as-val">India</div>
+            <div class="as-label">Design · Engineering · Assembly</div>
+          </div>
+          <div class="about-stat">
+            <div class="as-val">MSME</div>
+            <div class="as-label">Registered · Govt. of India</div>
+          </div>
+          <div class="about-stat">
+            <div class="as-val">&lt;5W</div>
+            <div class="as-label">Edge AI · On-device inference</div>
+          </div>
+        </div>
+        <div class="keypoints reveal rd5">
+          <div class="keypoint"><span class="kp-bullet">//</span><span class="kp-text">No external radio dependency — low-intercept, LPI/LPD communication architecture</span></div>
+          <div class="keypoint"><span class="kp-bullet">//</span><span class="kp-text">Vertically integrated: silicon to software, one team, one stack</span></div>
+          <div class="keypoint"><span class="kp-bullet">//</span><span class="kp-text">Edge AI inference on-device — no cloud dependency in the operational loop</span></div>
+          <div class="keypoint"><span class="kp-bullet">//</span><span class="kp-text">Purpose-built for Indian terrain, climate, and threat environment</span></div>
+          <div class="keypoint"><span class="kp-bullet">//</span><span class="kp-text">MSME Registered · Government of India — fully compliant with domestic content and sourcing norms</span></div>
+        </div>
+      </div>
+    </section>
+    <section id="cta" aria-label="Call to action">
+      <h2 class="cta-title reveal">Command<br><span>with</span><br>Certainty.</h2>
+      <div class="cta-actions reveal rd1"><button class="btn-primary" data-page="contact">Engage with Us</button></div>
+    </section>
+    <div class="slim-footer"><span class="footer-copy">&copy; 2026 Vikasana Systems · India · All Rights Reserved</span></div>
   </div>
 
-  <div class="cta-band">
-    <div class="cta-h">COMMAND WITH <em>CERTAINTY.</em></div>
-    <div class="cta-btns">
-      <button class="btn-olive" data-page="contact">Engage with Us</button>
-      <button class="btn-outline" data-page="domains">Explore Domains</button>
-    </div>
+  <!-- ================================================================
+       PAGE: TECHNOLOGY
+  ================================================================ -->
+  <div id="pg-technology" class="page">
+    <section id="technology" aria-labelledby="tech-heading">
+      <div class="domains-intro">
+        <div class="section-label reveal">Engineering Doctrine</div>
+        <h2 id="tech-heading" class="section-title reveal rd1">How We<br><em>Build.</em></h2>
+      </div>
+      <div class="tech-layout">
+        <div class="tech-pillars reveal rd2">
+          <div class="tech-pillar"><div class="tp-num">01</div><div><div class="tp-title">No Radio Silence Penalty</div><div class="tp-desc">Systems engineered around Low Probability of Intercept / Low Probability of Detection (LPI/LPD) communication architectures. Our platforms operate in contested RF environments without exposing position or intent.</div></div></div>
+          <div class="tech-pillar"><div class="tp-num">02</div><div><div class="tp-title">Edge AI — Zero Cloud</div><div class="tp-desc">All inference runs on-device. Object detection, target classification, sensor fusion, and autonomous decision-making execute locally on low-power embedded hardware. No latency. No external dependency. No intercept surface.</div></div></div>
+          <div class="tech-pillar"><div class="tp-num">03</div><div><div class="tp-title">Completely Offgrid</div><div class="tp-desc">Portable, self-powered platforms with onboard energy management. Designed for extended forward deployment without logistics tail. Smaller, lighter, and drawing a fraction of the power of comparable international systems.</div></div></div>
+          <div class="tech-pillar"><div class="tp-num">04</div><div><div class="tp-title">Sovereign Stack</div><div class="tp-desc">From bare-metal firmware on STM32 and i.MX8MP SoCs to GStreamer pipelines, Linux BSP, and application software — the entire stack is developed, owned, and auditable in India. No black-box foreign IP in the critical path.</div></div></div>
+          <div class="tech-pillar"><div class="tp-num">05</div><div><div class="tp-title">Field Survivability</div><div class="tp-desc">Ruggedised for high-vibration, temperature extremes, dust, and humidity. Every mechanical and electronic design decision accounts for Indian terrain conditions — from Himalayan high-altitude to coastal humid environments.</div></div></div>
+        </div>
+        <div class="tech-right reveal rd3">
+          <div class="stat-big-block">
+            <div class="sbb-val">Edge<br>AI</div>
+            <div class="sbb-label">On-Device · No Cloud · &lt;5W Inference</div>
+          </div>
+          <div class="cert-stack">
+            <div class="cert-row"><div class="cert-dot"></div><span class="cert-text">MSME Registered — Government of India</span></div>
+            <div class="cert-row"><div class="cert-dot"></div><span class="cert-text">Make in India — DPIIT Registered</span></div>
+            <div class="cert-row"><div class="cert-dot"></div><span class="cert-text">iDEX / DISC Framework Participant</span></div>
+            <div class="cert-row"><div class="cert-dot"></div><span class="cert-text">DRDO Technology Development Pathway</span></div>
+            <div class="cert-row"><div class="cert-dot"></div><span class="cert-text">Atmanirbhar Bharat Aligned</span></div>
+            <div class="cert-row"><div class="cert-dot"></div><span class="cert-text">ITAR / EAR Compliance Programme</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="cta" aria-label="Call to action">
+      <h2 class="cta-title reveal">Command<br><span>with</span><br>Certainty.</h2>
+      <div class="cta-actions reveal rd1"><button class="btn-primary" data-page="contact">Engage with Us</button></div>
+    </section>
+    <div class="slim-footer"><span class="footer-copy">&copy; 2026 Vikasana Systems · India · All Rights Reserved</span></div>
   </div>
 
-  <footer class="site-footer">
-    <div class="foot-grid">
-      <div>
-        <span class="foot-name">VIKASANA SYSTEMS</span>
-        <span class="foot-sub">Systems · India · Est. 2024</span>
-        <p class="foot-body">Indigenous autonomous defence platforms for Land, Air, and Water. Hardware. Software. AI-native. Mission-ready.</p>
-        <div class="foot-badges">
-          <span class="foot-badge">Make in India</span>
-          <span class="foot-badge">Atmanirbhar Bharat</span>
-          <span class="foot-badge">iDEX</span>
-        </div>
-      </div>
-      <div>
-        <div class="foot-col-h">Domains</div>
-        <ul class="foot-links">
-          <li><a href="#" data-page="domains">Land — UGV</a></li>
-          <li><a href="#" data-page="domains">Air — UAV</a></li>
-          <li><a href="#" data-page="domains">Water — ROV / USV</a></li>
-          <li><a href="#" data-page="domains">Software &amp; AI</a></li>
-          <li><a href="#" data-page="domains">Multi-Domain Network</a></li>
-        </ul>
-      </div>
-      <div>
-        <div class="foot-col-h">Company</div>
-        <ul class="foot-links">
-          <li><a href="#" data-page="about">About Us</a></li>
-          <li><a href="#" data-page="technology">Technology</a></li>
-          <li><a href="#" data-page="team">Team</a></li>
-          <li><a href="#" data-page="investors">Investors</a></li>
-          <li><a href="#" data-page="contact">Contact</a></li>
-        </ul>
-      </div>
-      <div>
-        <div class="foot-col-h">Contact</div>
-        <ul class="foot-links">
-          <li><a href="mailto:info@vikasanasystems.tech">info@vikasanasystems.tech</a></li>
-          <li><a href="#" data-page="contact">Procurement</a></li>
-          <li><a href="#" data-page="investors">Investor Deck</a></li>
-          <li><a href="mailto:info@vikasanasystems.tech?subject=Careers">Careers</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="foot-bottom">
-      <span class="foot-copy">&copy; 2025 Vikasana Systems Pvt. Ltd. · India · All Rights Reserved</span>
-      <span class="foot-copy">Defence Technology · info@vikasanasystems.tech</span>
-    </div>
-  </footer>
-</div>
 
-<!-- ================================================================
-     PAGE: DOMAINS
-================================================================ -->
-<div id="pg-domains" class="page">
-  <div class="inner-page">
-    <div class="sec-tag">Operating Domains</div>
-    <h1 class="sec-h">LAND. AIR. <em>WATER.</em></h1>
-    <p class="sec-intro">Indigenous autonomous platforms across all physical domains of modern conflict, engineered to work as a unified multi-domain network.</p>
-
-    <!-- LAND -->
-    <div class="dom-block">
-      <div class="dom-hero-img">
-        <img src="./assets/img/land.png" alt="Military tank in terrain — Land Systems">
-        <span class="dom-img-label land-label">Terrain Dominance</span>
-      </div>
-      <h2 class="dom-title land-title">LAND SYSTEMS</h2>
-      <p class="dom-body">Unmanned Ground Vehicles (UGV) engineered for reconnaissance, mine-laying, perimeter security, and logistics support. Autonomous waypoint navigation with terrain-adaptive control and silent electric drive.</p>
-      <div class="prod-grid">
-        <div class="prod-card">
-          <div class="prod-top">
-            <div><div class="prod-name">VAJRA-X1</div><div class="prod-sub-label">Tactical UGV</div></div>
-            <div class="prod-lock">&#9646;</div>
-          </div>
-          <div class="prod-specs">
-            <div class="spec"><div class="spec-l">Weight</div><div class="spec-v">850 kg</div></div>
-            <div class="spec"><div class="spec-l">Payload</div><div class="spec-v">300 kg</div></div>
-            <div class="spec"><div class="spec-l">Range</div><div class="spec-v">40 km</div></div>
-            <div class="spec"><div class="spec-l">Speed</div><div class="spec-v">25 km/h</div></div>
-            <div class="spec"><div class="spec-l">Endurance</div><div class="spec-v">8 hrs</div></div>
-            <div class="spec"><div class="spec-l">Drive</div><div class="spec-v">Electric Silent</div></div>
+  <!-- ================================================================
+       PAGE: INVESTORS
+  ================================================================ -->
+  <div id="pg-investors" class="page">
+    <section id="investors" aria-labelledby="inv-heading">
+      <div class="inv-layout">
+        <div class="inv-left">
+          <div class="section-label reveal">Investor Relations</div>
+          <h2 id="inv-heading" class="section-title reveal rd1">The<br><em>Opportunity.</em></h2>
+          <p class="inv-left-text reveal rd2">India's defence modernisation mandate represents the largest procurement opportunity in the nation's history. The government has mandated 68% domestic procurement — a policy inflection reshaping the entire Indian defence industrial base. Vikasana Systems is positioned at the intersection of Atmanirbhar Bharat policy, the global autonomous systems surge, and next-generation edge AI.</p>
+          <div class="metrics-grid reveal rd3">
+            <div class="metric-cell"><div class="metric-val">$72B</div><div class="metric-label">India Defence Budget FY25</div></div>
+            <div class="metric-cell"><div class="metric-val">68%</div><div class="metric-label">Domestic Procurement Mandate</div></div>
+            <div class="metric-cell"><div class="metric-val">2030</div><div class="metric-label">Defence Export Target Year</div></div>
+            <div class="metric-cell"><div class="metric-val">iDEX</div><div class="metric-label">Innovation Framework Access</div></div>
           </div>
         </div>
-        <div class="prod-card">
-          <div class="prod-top">
-            <div><div class="prod-name">VAJRA-S2</div><div class="prod-sub-label">Breacher Scout UGV</div></div>
-            <div class="prod-lock">&#9646;</div>
-          </div>
-          <div class="prod-specs">
-            <div class="spec"><div class="spec-l">Weight</div><div class="spec-v">120 kg</div></div>
-            <div class="spec"><div class="spec-l">Payload</div><div class="spec-v">45 kg</div></div>
-            <div class="spec"><div class="spec-l">Range</div><div class="spec-v">20 km</div></div>
-            <div class="spec"><div class="spec-l">Speed</div><div class="spec-v">12 km/h</div></div>
-            <div class="spec"><div class="spec-l">Sensors</div><div class="spec-v">LiDAR + EO/IR</div></div>
-            <div class="spec"><div class="spec-l">Autonomy</div><div class="spec-v">Level 3</div></div>
-          </div>
+        <div class="inv-panel reveal rd2">
+          <h3>Why Vikasana Systems</h3>
+          <ul class="why-list">
+            <li>Vertically integrated hardware-software capability — one team from silicon to mission software</li>
+            <li>Rare combination: ROV, UAV, and UGV under one roof with shared AI and comms architecture</li>
+            <li>LPI/LPD radio-silence-compliant design — no comparable Indian competitor today</li>
+            <li>Edge AI offgrid compute at under 5W — 10× more power-efficient than comparable Western systems</li>
+            <li>Active prototype pipeline; products entering testing phase across all three domains</li>
+            <li>MSME Registered with Government of India — eligible for defence procurement preferential treatment and MSME-specific tenders</li>
+            <li>Direct policy tailwinds: iDEX, DISC, Make in India, Atmanirbhar Bharat</li>
+            <li>Zero foreign IP dependencies in critical path — full sovereign technology ownership</li>
+            <li>Export-ready architecture aligned with Friendly Foreign Countries (FFC) framework</li>
+          </ul>
+          <button class="btn-primary" data-page="contact">Request Investor Deck</button>
         </div>
       </div>
-    </div>
-
-    <!-- AIR -->
-    <div class="dom-block">
-      <div class="dom-hero-img dom-hero-air">
-        <img src="./assets/img/drone.png" alt="Military drone — Air Systems">
-        <span class="dom-img-label air-label">Fire from Above</span>
-      </div>
-      <h2 class="dom-title air-title">AIR SYSTEMS</h2>
-      <p class="dom-body">Fixed-wing and multi-rotor UAVs designed for ISR, target acquisition, and electronic warfare support. Low acoustic signature, extended endurance, and fully encrypted C2 with LPI/LPD waveforms.</p>
-      <div class="prod-grid">
-        <div class="prod-card">
-          <div class="prod-top">
-            <div><div class="prod-name">GARUDA-F1</div><div class="prod-sub-label">Fixed-Wing Tactical</div></div>
-            <div class="prod-lock">&#9646;</div>
-          </div>
-          <div class="prod-specs">
-            <div class="spec"><div class="spec-l">Wingspan</div><div class="spec-v">3.2 m</div></div>
-            <div class="spec"><div class="spec-l">MTOW</div><div class="spec-v">18 kg</div></div>
-            <div class="spec"><div class="spec-l">Endurance</div><div class="spec-v">6 hrs</div></div>
-            <div class="spec"><div class="spec-l">Ceiling</div><div class="spec-v">4,500 m AGL</div></div>
-            <div class="spec"><div class="spec-l">Payload</div><div class="spec-v">EO/IR + SAR</div></div>
-            <div class="spec"><div class="spec-l">Launch</div><div class="spec-v">Catapult</div></div>
-          </div>
-        </div>
-        <div class="prod-card">
-          <div class="prod-top">
-            <div><div class="prod-name">GARUDA-M4</div><div class="prod-sub-label">Multi-Rotor Tactical</div></div>
-            <div class="prod-lock">&#9646;</div>
-          </div>
-          <div class="prod-specs">
-            <div class="spec"><div class="spec-l">Type</div><div class="spec-v">Hex-rotor</div></div>
-            <div class="spec"><div class="spec-l">MTOW</div><div class="spec-v">8 kg</div></div>
-            <div class="spec"><div class="spec-l">Endurance</div><div class="spec-v">45 min</div></div>
-            <div class="spec"><div class="spec-l">Payload</div><div class="spec-v">2.5 kg</div></div>
-            <div class="spec"><div class="spec-l">Speed</div><div class="spec-v">40 km/h</div></div>
-            <div class="spec"><div class="spec-l">Comms</div><div class="spec-v">LPI/LPD</div></div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- WATER -->
-    <div class="dom-block">
-      <div class="dom-hero-img dom-hero-water">
-        <img src="./assets/img/underwater.png" alt="Naval vessel — Water Systems">
-        <span class="dom-img-label water-label">Ocean Sovereignty</span>
-      </div>
-      <h2 class="dom-title water-title">WATER SYSTEMS</h2>
-      <p class="dom-body">ROV and USV platforms for coastal patrol, underwater inspection, mine detection, and maritime domain awareness. Acoustic positioning with autonomous NMEA-fused navigation.</p>
-      <div class="prod-grid">
-        <div class="prod-card">
-          <div class="prod-top">
-            <div><div class="prod-name">MATSYA-R1</div><div class="prod-sub-label">Inspection ROV</div></div>
-            <div class="prod-lock">&#9646;</div>
-          </div>
-          <div class="prod-specs">
-            <div class="spec"><div class="spec-l">Depth</div><div class="spec-v">300 m</div></div>
-            <div class="spec"><div class="spec-l">DOF</div><div class="spec-v">6-DOF</div></div>
-            <div class="spec"><div class="spec-l">Camera</div><div class="spec-v">4K + Sonar</div></div>
-            <div class="spec"><div class="spec-l">Tether</div><div class="spec-v">400 m fiber</div></div>
-            <div class="spec"><div class="spec-l">Payload</div><div class="spec-v">35 kg</div></div>
-            <div class="spec"><div class="spec-l">Endurance</div><div class="spec-v">4 hrs</div></div>
-          </div>
-        </div>
-        <div class="prod-card">
-          <div class="prod-top">
-            <div><div class="prod-name">MATSYA-U2</div><div class="prod-sub-label">Patrol USV</div></div>
-            <div class="prod-lock">&#9646;</div>
-          </div>
-          <div class="prod-specs">
-            <div class="spec"><div class="spec-l">Length</div><div class="spec-v">4.2 m</div></div>
-            <div class="spec"><div class="spec-l">Speed</div><div class="spec-v">25 kn</div></div>
-            <div class="spec"><div class="spec-l">Range</div><div class="spec-v">120 nm</div></div>
-            <div class="spec"><div class="spec-l">Payload</div><div class="spec-v">80 kg</div></div>
-            <div class="spec"><div class="spec-l">Sensors</div><div class="spec-v">Radar + AIS</div></div>
-            <div class="spec"><div class="spec-l">Autonomy</div><div class="spec-v">Level 4</div></div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- SOFTWARE + SUPPORTING -->
-    <div class="sw-row">
-      <div class="sw-card">
-        <div class="sw-num">DOM-04</div>
-        <h3 class="sw-title">Software &amp; AI</h3>
-        <p class="sw-body">Edge-native AI inference, computer vision, and C2 software running entirely on-device — no cloud, no latency, no dependency.</p>
-        <div class="sw-tags">
-          <span class="sw-tag">Edge AI</span>
-          <span class="sw-tag">Computer Vision</span>
-          <span class="sw-tag">GCS</span>
-          <span class="sw-tag">Sensor Fusion</span>
-        </div>
-      </div>
-      <div class="sw-card">
-        <div class="sw-num">DOM-05</div>
-        <h3 class="sw-title">Supporting Equipment</h3>
-        <p class="sw-body">Portable ground stations, encrypted datalink hardware, battery and power management systems, ruggedised sensor packages.</p>
-        <div class="sw-tags">
-          <span class="sw-tag">Ground Stations</span>
-          <span class="sw-tag">Datalink HW</span>
-          <span class="sw-tag">Power Systems</span>
-          <span class="sw-tag">Edge Compute</span>
-        </div>
-      </div>
-    </div>
+    </section>
+    <section id="cta" aria-label="Call to action">
+      <h2 class="cta-title reveal">Command<br><span>with</span><br>Certainty.</h2>
+      <div class="cta-actions reveal rd1"><button class="btn-primary" data-page="contact">Engage with Us</button></div>
+    </section>
+    <div class="slim-footer"><span class="footer-copy">&copy; 2026 Vikasana Systems · India · All Rights Reserved</span></div>
   </div>
 
-  <div class="cta-band">
-    <div class="cta-h">COMMAND WITH <em>CERTAINTY.</em></div>
-    <div class="cta-btns"><button class="btn-olive" data-page="contact">Engage with Us</button></div>
-  </div>
-  <footer class="site-footer site-footer--slim">
-    <div class="foot-bottom">
-      <span class="foot-copy">&copy; 2025 Vikasana Systems Pvt. Ltd. · India · All Rights Reserved</span>
-      <span class="foot-copy">info@vikasanasystems.tech</span>
-    </div>
-  </footer>
-</div>
-
-<!-- ================================================================
-     PAGE: ABOUT
-================================================================ -->
-<div id="pg-about" class="page">
-  <div class="inner-page">
-    <div class="sec-tag">Our DNA</div>
-    <h1 class="sec-h">FORGED <em>IN INDIA.</em></h1>
-    <p class="sec-intro">We build what the mission demands — not what the catalogue offers.</p>
-
-    <div class="about-layout">
-      <div class="about-left">
-        <img class="about-img" src="./assets/img/invester.png" alt="Engineers working on embedded systems — Vikasana Systems">
-        <p class="about-body">Vikasana Systems is an Indian defence and autonomous technology company building integrated hardware-software platforms across land, air, and maritime domains. Every system we ship is designed, engineered, and assembled in India — from embedded firmware to AI inference pipelines.</p>
-        <p class="about-body">Our platforms are conceived for low-signature, no-radio-silence operations. Portable. Compact. Powered by edge AI running completely off-grid, consuming a fraction of the energy of comparable Western systems. We are building the autonomous nervous system of the next-generation Indian warfighter.</p>
-      </div>
-      <div class="about-right">
-        <div class="ind-block">
-          <div class="ind-header">
-            <span class="ind-label">Indigenous Content Ratio</span>
-            <span class="ind-pct" id="ind-pct">0%</span>
+  <!-- ================================================================
+       PAGE: CONTACT
+  ================================================================ -->
+  <div id="pg-contact" class="page">
+    <section id="contact" aria-labelledby="contact-heading">
+      <div class="contact-layout">
+        <div class="contact-info">
+          <div class="section-label reveal">Contact</div>
+          <h2 id="contact-heading" class="section-title reveal rd1">Get In<br><em>Touch.</em></h2>
+          <p class="contact-lead reveal rd2">For procurement enquiries, investor relations, partnership discussions, or technical demonstrations — write to us directly. We respond within 48 hours.</p>
+          <div class="contact-details reveal rd3">
+            <div class="c-item"><span class="c-label">Primary Contact</span><span class="c-val"><a href="mailto:info@vikasanasystems.tech">info@vikasanasystems.tech</a></span></div>
+            <div class="c-item"><span class="c-label">Enquiry Types</span><span class="c-note">Procurement · Investment · Partnership · Demo Request</span></div>
+            <div class="c-item"><span class="c-label">Response Time</span><span class="c-note">Within 48 hours of receipt</span></div>
           </div>
-          <div class="ind-track"><div class="ind-fill" id="ind-fill"></div></div>
         </div>
-
-        <div class="kp-list">
-          <div class="kp"><span class="kp-bullet">//</span><span class="kp-text">No external radio dependency — low-intercept, LPI/LPD communication architecture</span></div>
-          <div class="kp"><span class="kp-bullet">//</span><span class="kp-text">Vertically integrated: silicon to software, one team, one stack</span></div>
-          <div class="kp"><span class="kp-bullet">//</span><span class="kp-text">Edge AI inference on-device — no cloud dependency in the operational loop</span></div>
-          <div class="kp"><span class="kp-bullet">//</span><span class="kp-text">Purpose-built for Indian terrain, climate, and threat environment</span></div>
-        </div>
-
-        <div class="about-stats">
-          <div class="a-stat">
-            <div class="a-val">78<sub>%</sub></div>
-            <div class="a-lbl">Indigenous Content</div>
-          </div>
-          <div class="a-stat">
-            <div class="a-val">&lt;5<sub>W</sub></div>
-            <div class="a-lbl">AI Inference Power</div>
-          </div>
-          <div class="a-stat">
-            <div class="a-val">3</div>
-            <div class="a-lbl">Domains</div>
+        <div class="reveal rd2">
+          <div class="contact-form-wrap">
+            <div class="cf-row">
+              <div class="cf-field"><label class="cf-label" for="f-name">Full Name / Organisation *</label><input class="cf-input" id="f-name" type="text" placeholder="Cdr. Arjun Mehta / MoD" autocomplete="name"></div>
+              <div class="cf-field"><label class="cf-label" for="f-email">Email Address *</label><input class="cf-input" id="f-email" type="email" placeholder="secure@domain.gov.in" autocomplete="email"></div>
+            </div>
+            <div class="cf-row">
+              <div class="cf-field">
+                <label class="cf-label" for="f-type">Enquiry Type</label>
+                <select class="cf-select" id="f-type"><option value="" disabled selected>Select category</option><option>Procurement Enquiry</option><option>Investor Relations</option><option>Technical Demonstration</option><option>Partnership / Integration</option><option>R&amp;D Collaboration</option><option>Product Notification</option><option>Other</option></select>
+              </div>
+              <div class="cf-field">
+                <label class="cf-label" for="f-domain">Domain of Interest</label>
+                <select class="cf-select" id="f-domain"><option value="" disabled selected>Select domain</option><option>Land — UGV</option><option>Air — UAV</option><option>Water — ROV / USV</option><option>Software &amp; AI</option><option>Supporting Equipment</option><option>Full Portfolio</option></select>
+              </div>
+            </div>
+            <div class="cf-field"><label class="cf-label" for="f-msg">Message</label><textarea class="cf-textarea" id="f-msg" placeholder="Describe your requirement or enquiry in brief..."></textarea></div>
+            <div class="cf-submit"><button type="button" id="form-submit">Transmit Enquiry</button></div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
+    <div class="slim-footer"><span class="footer-copy">&copy; 2026 Vikasana Systems · India · All Rights Reserved</span></div>
   </div>
 
-  <div class="cta-band">
-    <div class="cta-h">COMMAND WITH <em>CERTAINTY.</em></div>
-    <div class="cta-btns"><button class="btn-olive" data-page="contact">Engage with Us</button></div>
-  </div>
-  <footer class="site-footer site-footer--slim">
-    <div class="foot-bottom">
-      <span class="foot-copy">&copy; 2025 Vikasana Systems Pvt. Ltd. · India · All Rights Reserved</span>
-      <span class="foot-copy">info@vikasanasystems.tech</span>
+  <!-- ================================================================
+       PAGE: TERMS & CONDITIONS
+  ================================================================ -->
+  <div id="pg-terms" class="page">
+    <div class="inner-page legal-page">
+      <div class="legal-breadcrumb">
+        <button class="legal-back-btn" data-page="home">&larr; Back to Home</button>
+        <span class="legal-breadcrumb-sep">/</span>
+        <span class="legal-breadcrumb-cur">Terms &amp; Conditions</span>
+      </div>
+      <div class="section-label">Legal</div>
+      <h1 class="sec-h-legal">Terms &amp;<br><em>Conditions</em></h1>
+      <div class="legal-meta">
+        <span class="legal-meta-item">Effective: 1 January 2026</span>
+        <span class="legal-meta-item">Version: 1.0</span>
+        <span class="legal-meta-item">Jurisdiction: India</span>
+      </div>
+
+      <div class="legal-notice">
+        <span class="legal-notice-icon">//</span>
+        <p>Images, renders, and certain media on this website are AI-generated placeholders. Official product photography and video will replace these upon public launch. Videos are sourced from <a href="https://www.pexels.com/videos/" target="_blank" rel="noopener noreferrer">Pexels</a> under their free-to-use licence.</p>
+      </div>
+
+      <div class="legal-sections">
+
+        <div class="legal-section">
+          <div class="legal-sec-num">01</div>
+          <div class="legal-sec-body">
+            <h2 class="legal-sec-title">Acceptance of Terms</h2>
+            <p>By accessing or using the Vikasana Systems website ("Site"), you agree to be bound by these Terms and Conditions. If you do not agree with any part of these terms, you must not use the Site. These terms constitute a legally binding agreement between you and Vikasana Systems, an MSME registered enterprise incorporated in India.</p>
+          </div>
+        </div>
+
+        <div class="legal-section">
+          <div class="legal-sec-num">02</div>
+          <div class="legal-sec-body">
+            <h2 class="legal-sec-title">Intellectual Property</h2>
+            <p>All content on this Site — including but not limited to text, product names, technical specifications, trade names, logos, software names (Drishtikon, Chakshu), system designations, and visual design — is the proprietary intellectual property of Vikasana Systems and is protected under applicable Indian and international intellectual property laws.</p>
+            <p>You may not reproduce, distribute, modify, publicly display, or create derivative works from any content on this Site without prior written consent from Vikasana Systems.</p>
+            <p class="legal-note"><strong>Note on Media:</strong> Images marked as AI-generated are placeholders pending official product release. Video content is sourced from Pexels (pexels.com) under their royalty-free licence for commercial use. All Pexels content remains the copyright of the respective creators.</p>
+          </div>
+        </div>
+
+        <div class="legal-section">
+          <div class="legal-sec-num">03</div>
+          <div class="legal-sec-body">
+            <h2 class="legal-sec-title">Permitted Use</h2>
+            <p>This Site is intended for informational purposes only. You may access the Site for your own personal, non-commercial use to learn about Vikasana Systems' products and services. Any unauthorised use, including but not limited to commercial exploitation of content, systematic scraping, or reverse engineering of specifications, is strictly prohibited.</p>
+          </div>
+        </div>
+
+        <div class="legal-section">
+          <div class="legal-sec-num">04</div>
+          <div class="legal-sec-body">
+            <h2 class="legal-sec-title">Defence &amp; Export Compliance</h2>
+            <p>Vikasana Systems develops defence and dual-use technology subject to Indian export control regulations, including the Foreign Trade (Development and Regulation) Act 1992, SCOMET (Special Chemicals, Organisms, Materials, Equipment and Technologies) controls, and applicable international frameworks. Information provided on this Site regarding specifications and capabilities does not constitute an offer to export controlled items. All procurement, integration, and export activities are subject to applicable regulatory approvals.</p>
+          </div>
+        </div>
+
+        <div class="legal-section">
+          <div class="legal-sec-num">05</div>
+          <div class="legal-sec-body">
+            <h2 class="legal-sec-title">Disclaimers</h2>
+            <p>The Site is provided on an "as is" and "as available" basis. Vikasana Systems makes no warranties, express or implied, regarding the accuracy, completeness, or fitness for a particular purpose of any information presented. Specifications described are subject to change without notice. Products listed as "In Development," "Phase I," or "Coming Soon" have not yet received final regulatory clearances.</p>
+          </div>
+        </div>
+
+        <div class="legal-section">
+          <div class="legal-sec-num">06</div>
+          <div class="legal-sec-body">
+            <h2 class="legal-sec-title">Limitation of Liability</h2>
+            <p>To the maximum extent permitted by applicable law, Vikasana Systems shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising from your use of, or inability to use, the Site or its contents.</p>
+          </div>
+        </div>
+
+        <div class="legal-section">
+          <div class="legal-sec-num">07</div>
+          <div class="legal-sec-body">
+            <h2 class="legal-sec-title">Governing Law</h2>
+            <p>These Terms and Conditions shall be governed by and construed in accordance with the laws of India. Any disputes arising out of or in connection with these terms shall be subject to the exclusive jurisdiction of the courts of India.</p>
+          </div>
+        </div>
+
+        <div class="legal-section">
+          <div class="legal-sec-num">08</div>
+          <div class="legal-sec-body">
+            <h2 class="legal-sec-title">Contact</h2>
+            <p>For legal enquiries, please write to: <a href="mailto:info@vikasanasystems.tech">info@vikasanasystems.tech</a></p>
+          </div>
+        </div>
+
+      </div>
     </div>
-  </footer>
-</div>
-
-<!-- ================================================================
-     PAGE: TECHNOLOGY
-================================================================ -->
-<div id="pg-technology" class="page">
-  <div class="inner-page">
-    <div class="sec-tag">Engineering Doctrine</div>
-    <h1 class="sec-h">HOW WE <em>BUILD.</em></h1>
-
-    <div class="pillars-5">
-      <div class="pillar">
-        <div class="pillar-num">01</div>
-        <h3 class="pillar-h">No Radio Silence Penalty</h3>
-        <p class="pillar-body">Systems engineered around LPI/LPD communication architectures. Operate in contested RF environments without exposing position or intent.</p>
-      </div>
-      <div class="pillar">
-        <div class="pillar-num">02</div>
-        <h3 class="pillar-h">Edge AI — Zero Cloud</h3>
-        <p class="pillar-body">All inference runs on-device. Object detection, target classification, sensor fusion execute locally on low-power embedded hardware.</p>
-      </div>
-      <div class="pillar">
-        <div class="pillar-num">03</div>
-        <h3 class="pillar-h">Completely Offgrid</h3>
-        <p class="pillar-body">Portable, self-powered platforms with onboard energy management. Extended forward deployment without logistics tail.</p>
-      </div>
-      <div class="pillar">
-        <div class="pillar-num">04</div>
-        <h3 class="pillar-h">Sovereign Stack</h3>
-        <p class="pillar-body">From bare-metal firmware on STM32 and i.MX8MP SoCs to GStreamer pipelines — the entire stack developed and owned in India.</p>
-      </div>
-      <div class="pillar">
-        <div class="pillar-num">05</div>
-        <h3 class="pillar-h">Field Survivability</h3>
-        <p class="pillar-body">Ruggedised for high-vibration, temperature extremes, dust, and humidity. Designed for Indian terrain from Himalayan altitude to coastal humidity.</p>
-      </div>
-    </div>
-
-    <div class="tech-bottom">
-      <div class="tech-left">
-        <div class="big-stat">
-          <div class="big-num">78%</div>
-          <div class="big-label">Indigenous Content · Current Generation</div>
-        </div>
-        <div class="edge-stat">
-          <div class="edge-title">Edge AI</div>
-          <div class="edge-sub">On-Device · No Cloud · &lt;5W Inference</div>
-        </div>
-      </div>
-      <div class="tech-right">
-        <div class="cert-list">
-          <div class="cert-row"><div class="cert-sq"></div><span class="cert-text">Make in India — DPIIT Registered</span></div>
-          <div class="cert-row"><div class="cert-sq"></div><span class="cert-text">iDEX / DISC Framework Participant</span></div>
-          <div class="cert-row"><div class="cert-sq"></div><span class="cert-text">DRDO Technology Development Pathway</span></div>
-          <div class="cert-row"><div class="cert-sq"></div><span class="cert-text">Atmanirbhar Bharat Aligned</span></div>
-          <div class="cert-row"><div class="cert-sq"></div><span class="cert-text">ITAR / EAR Compliance Programme</span></div>
-        </div>
-      </div>
+    <div class="slim-footer">
+      <span class="footer-copy">&copy; 2026 Vikasana Systems · India · All Rights Reserved</span>
     </div>
   </div>
 
-  <div class="cta-band">
-    <div class="cta-h">COMMAND WITH <em>CERTAINTY.</em></div>
-    <div class="cta-btns"><button class="btn-olive" data-page="contact">Engage with Us</button></div>
-  </div>
-  <footer class="site-footer site-footer--slim">
-    <div class="foot-bottom">
-      <span class="foot-copy">&copy; 2025 Vikasana Systems Pvt. Ltd. · India · All Rights Reserved</span>
-      <span class="foot-copy">info@vikasanasystems.tech</span>
-    </div>
-  </footer>
-</div>
+  <!-- ================================================================
+       PAGE: PRIVACY POLICY
+  ================================================================ -->
+  <div id="pg-privacy" class="page">
+    <div class="inner-page legal-page">
+      <div class="legal-breadcrumb">
+        <button class="legal-back-btn" data-page="home">&larr; Back to Home</button>
+        <span class="legal-breadcrumb-sep">/</span>
+        <span class="legal-breadcrumb-cur">Privacy Policy</span>
+      </div>
+      <div class="section-label">Legal</div>
+      <h1 class="sec-h-legal">Privacy<br><em>Policy</em></h1>
+      <div class="legal-meta">
+        <span class="legal-meta-item">Effective: 1 January 2026</span>
+        <span class="legal-meta-item">Version: 1.0</span>
+        <span class="legal-meta-item">Jurisdiction: India</span>
+      </div>
 
-<!-- ================================================================
-     PAGE: TEAM
-================================================================ -->
-<div id="pg-team" class="page">
-  <div class="inner-page">
-    <div class="sec-tag">Command Structure</div>
-    <h1 class="sec-h">THE <em>OPERATORS.</em></h1>
-    <p class="sec-intro">A core team of engineers, strategists, and operators building India's next-generation autonomous defence capability. Names disclosed upon engagement.</p>
+      <div class="legal-notice">
+        <span class="legal-notice-icon">//</span>
+        <p>Vikasana Systems does not use advertising networks or sell user data. This policy describes what limited data is collected when you use this Site and how it is handled.</p>
+      </div>
 
-    <div class="team-grid">
-      <div class="team-card">
-        <img class="team-photo" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&q=80&auto=format&fit=crop&crop=face" alt="Founder and CEO">
-        <div class="team-info">
-          <div class="team-dept">Strategic Command</div>
-          <div class="team-name">Founder &amp; CEO</div>
-          <p class="team-bio">Founding vision. Defence strategy. Government relations. Capital deployment.</p>
+      <div class="legal-sections">
+
+        <div class="legal-section">
+          <div class="legal-sec-num">01</div>
+          <div class="legal-sec-body">
+            <h2 class="legal-sec-title">Data Controller</h2>
+            <p>Vikasana Systems ("we," "us") is the data controller for personal data collected through this Site. Contact: <a href="mailto:info@vikasanasystems.tech">info@vikasanasystems.tech</a></p>
+          </div>
         </div>
-      </div>
-      <div class="team-card">
-        <img class="team-photo" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=500&q=80&auto=format&fit=crop&crop=face" alt="CTO">
-        <div class="team-info">
-          <div class="team-dept">Technical Architecture</div>
-          <div class="team-name">CTO</div>
-          <p class="team-bio">Systems architecture. Edge AI. Embedded firmware. Full-stack platform engineering.</p>
+
+        <div class="legal-section">
+          <div class="legal-sec-num">02</div>
+          <div class="legal-sec-body">
+            <h2 class="legal-sec-title">Information We Collect</h2>
+            <p>We collect only information that you voluntarily provide through the contact form on this Site — specifically: your name or organisation, email address, enquiry category, domain of interest, and any message you choose to submit. We do not use tracking cookies, behavioural analytics, or third-party advertising scripts.</p>
+          </div>
         </div>
-      </div>
-      <div class="team-card">
-        <img class="team-photo" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=500&q=80&auto=format&fit=crop&crop=face" alt="Head of Operations">
-        <div class="team-info">
-          <div class="team-dept">Field Operations</div>
-          <div class="team-name">Head of Operations</div>
-          <p class="team-bio">Manufacturing. Supply chain. Field deployment. Quality assurance. Compliance.</p>
+
+        <div class="legal-section">
+          <div class="legal-sec-num">03</div>
+          <div class="legal-sec-body">
+            <h2 class="legal-sec-title">How We Use Your Information</h2>
+            <p>Information submitted through the contact form is used solely to respond to your enquiry and, if relevant, to follow up on procurement, investor relations, or partnership discussions. We do not add you to marketing lists without explicit consent, and we do not share your information with third parties except where required by law.</p>
+          </div>
         </div>
-      </div>
-      <div class="team-card">
-        <img class="team-photo" src="https://images.unsplash.com/photo-1519345182560-3f2917c472ef?w=500&q=80&auto=format&fit=crop&crop=face" alt="Lead AI and Autonomy">
-        <div class="team-info">
-          <div class="team-dept">AI Systems</div>
-          <div class="team-name">Lead — AI &amp; Autonomy</div>
-          <p class="team-bio">Computer vision. Autonomous navigation. Sensor fusion. On-device inference pipelines.</p>
+
+        <div class="legal-section">
+          <div class="legal-sec-num">04</div>
+          <div class="legal-sec-body">
+            <h2 class="legal-sec-title">Data Retention</h2>
+            <p>Enquiry data is retained only as long as necessary to respond to and close your request, or as required under applicable Indian law. You may request deletion of your data at any time by writing to us at <a href="mailto:info@vikasanasystems.tech">info@vikasanasystems.tech</a>.</p>
+          </div>
         </div>
+
+        <div class="legal-section">
+          <div class="legal-sec-num">05</div>
+          <div class="legal-sec-body">
+            <h2 class="legal-sec-title">Third-Party Services</h2>
+            <p>This Site loads fonts from Google Fonts (fonts.googleapis.com). Google Fonts may collect standard web server logs including your IP address when fonts are requested. This Site also references video content hosted on Pexels. When such content plays, Pexels' standard server logs may apply. We are not responsible for the privacy practices of these third-party services.</p>
+          </div>
+        </div>
+
+        <div class="legal-section">
+          <div class="legal-sec-num">06</div>
+          <div class="legal-sec-body">
+            <h2 class="legal-sec-title">Security</h2>
+            <p>We implement appropriate technical and organisational measures to protect personal data against unauthorised access, disclosure, or destruction. However, no method of transmission over the internet is completely secure, and we cannot guarantee absolute security.</p>
+          </div>
+        </div>
+
+        <div class="legal-section">
+          <div class="legal-sec-num">07</div>
+          <div class="legal-sec-body">
+            <h2 class="legal-sec-title">Your Rights</h2>
+            <p>Under applicable Indian data protection law, you have the right to access, correct, and request deletion of any personal data we hold about you. To exercise these rights, contact us at <a href="mailto:info@vikasanasystems.tech">info@vikasanasystems.tech</a>.</p>
+          </div>
+        </div>
+
+        <div class="legal-section">
+          <div class="legal-sec-num">08</div>
+          <div class="legal-sec-body">
+            <h2 class="legal-sec-title">Changes to This Policy</h2>
+            <p>We may update this Privacy Policy from time to time. The effective date at the top of this page will reflect the most recent revision. Continued use of the Site after any changes constitutes acceptance of the revised policy.</p>
+          </div>
+        </div>
+
       </div>
     </div>
-
-    <div class="team-note">
-      <div class="team-note-dot"></div>
-      <p class="team-note-text">Full team profiles and advisory board disclosed during formal engagement. <a href="#" class="team-note-link" data-page="contact">Initiate contact &rarr;</a></p>
-    </div>
-  </div>
-
-  <div class="cta-band">
-    <div class="cta-h">COMMAND WITH <em>CERTAINTY.</em></div>
-    <div class="cta-btns"><button class="btn-olive" data-page="contact">Engage with Us</button></div>
-  </div>
-  <footer class="site-footer site-footer--slim">
-    <div class="foot-bottom">
-      <span class="foot-copy">&copy; 2025 Vikasana Systems Pvt. Ltd. · India · All Rights Reserved</span>
-      <span class="foot-copy">info@vikasanasystems.tech</span>
-    </div>
-  </footer>
-</div>
-
-<!-- ================================================================
-     PAGE: INVESTORS
-================================================================ -->
-<div id="pg-investors" class="page">
-  <div class="inner-page">
-    <div class="sec-tag">Investor Relations</div>
-    <h1 class="sec-h">THE <em>OPPORTUNITY.</em></h1>
-    <p class="sec-intro">India's defence modernisation mandate represents the largest procurement opportunity in the nation's history. Vikasana Systems is positioned at the intersection of Atmanirbhar Bharat policy, the global autonomous systems surge, and next-generation edge AI.</p>
-
-    <div class="metrics-row">
-      <div class="metric-cell">
-        <div class="metric-val">$72B</div>
-        <div class="metric-lbl">India Defence Budget FY25</div>
-      </div>
-      <div class="metric-cell">
-        <div class="metric-val">68%</div>
-        <div class="metric-lbl">Domestic Procurement Mandate</div>
-      </div>
-      <div class="metric-cell">
-        <div class="metric-val">2030</div>
-        <div class="metric-lbl">Defence Export Target Year</div>
-      </div>
-      <div class="metric-cell">
-        <div class="metric-val">iDEX</div>
-        <div class="metric-lbl">Innovation Framework Access</div>
-      </div>
-    </div>
-
-    <div class="why-section">
-      <h2 class="why-h">WHY VIKASANA SYSTEMS</h2>
-      <div class="why-grid">
-        <div class="why-item"><div class="why-sq"></div><p class="why-text">Vertically integrated hardware-software capability — one team from silicon to mission software</p></div>
-        <div class="why-item"><div class="why-sq"></div><p class="why-text">Rare combination: ROV, UAV, and UGV under one roof with shared AI and comms architecture</p></div>
-        <div class="why-item"><div class="why-sq"></div><p class="why-text">LPI/LPD radio-silence-compliant design — no comparable Indian competitor today</p></div>
-        <div class="why-item"><div class="why-sq"></div><p class="why-text">Edge AI offgrid compute at under 5W — 10× more power-efficient than comparable Western systems</p></div>
-        <div class="why-item"><div class="why-sq"></div><p class="why-text">Active prototype pipeline; products entering testing phase across all three domains</p></div>
-        <div class="why-item"><div class="why-sq"></div><p class="why-text">Direct policy tailwinds: iDEX, DISC, Make in India, Atmanirbhar Bharat</p></div>
-        <div class="why-item"><div class="why-sq"></div><p class="why-text">Zero foreign IP dependencies in critical path — full sovereign technology ownership</p></div>
-        <div class="why-item"><div class="why-sq"></div><p class="why-text">Export-ready architecture aligned with Friendly Foreign Countries (FFC) framework</p></div>
-      </div>
-      <button class="btn-olive" data-page="contact">Request Investor Deck</button>
+    <div class="slim-footer">
+      <span class="footer-copy">&copy; 2026 Vikasana Systems · India · All Rights Reserved</span>
     </div>
   </div>
 
-  <div class="cta-band">
-    <div class="cta-h">COMMAND WITH <em>CERTAINTY.</em></div>
-    <div class="cta-btns"><button class="btn-olive" data-page="contact">Engage with Us</button></div>
-  </div>
-  <footer class="site-footer site-footer--slim">
-    <div class="foot-bottom">
-      <span class="foot-copy">&copy; 2025 Vikasana Systems Pvt. Ltd. · India · All Rights Reserved</span>
-      <span class="foot-copy">info@vikasanasystems.tech</span>
-    </div>
-  </footer>
-</div>
 
-<!-- ================================================================
-     PAGE: CONTACT
-================================================================ -->
-<div id="pg-contact" class="page">
-  <div class="inner-page">
-    <div class="sec-tag">Contact</div>
-    <h1 class="sec-h">GET IN <em>TOUCH.</em></h1>
-    <p class="sec-intro">For procurement enquiries, investor relations, partnership discussions, or technical demonstrations — write to us directly. We respond within 48 hours.</p>
-
-    <div class="contact-layout">
-      <div class="contact-left">
-        <div class="c-details">
-          <div class="c-row">
-            <span class="c-lbl">Primary Contact</span>
-            <span class="c-val"><a href="mailto:info@vikasanasystems.tech">info@vikasanasystems.tech</a></span>
-          </div>
-          <div class="c-row">
-            <span class="c-lbl">Country of Origin</span>
-            <span class="c-val">India</span>
-          </div>
-          <div class="c-row">
-            <span class="c-lbl">Enquiry Types</span>
-            <span class="c-note">Procurement · Investment · Partnership · Demo Request</span>
-          </div>
-          <div class="c-row">
-            <span class="c-lbl">Response Time</span>
-            <span class="c-note">Within 48 hours of receipt</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="contact-right">
-        <div class="cf-pair">
-          <div class="cf-group">
-            <label class="cf-lbl" for="cf-name">Full Name / Organisation *</label>
-            <input class="cf-input" id="cf-name" type="text" placeholder="Cdr. Arjun Mehta / MoD" autocomplete="name">
-          </div>
-          <div class="cf-group">
-            <label class="cf-lbl" for="cf-email">Email Address *</label>
-            <input class="cf-input" id="cf-email" type="email" placeholder="secure@domain.gov.in" autocomplete="email">
-          </div>
-        </div>
-        <div class="cf-pair">
-          <div class="cf-group">
-            <label class="cf-lbl" for="cf-type">Enquiry Type</label>
-            <select class="cf-select" id="cf-type">
-              <option value="" disabled selected>Select category</option>
-              <option value="procurement">Procurement Enquiry</option>
-              <option value="investor">Investor Relations</option>
-              <option value="demo">Technical Demonstration</option>
-              <option value="partner">Partnership / Integration</option>
-              <option value="rnd">R&amp;D Collaboration</option>
-              <option value="notify">Product Notification</option>
-              <option value="other">Other</option>
-            </select>
-          </div>
-          <div class="cf-group">
-            <label class="cf-lbl" for="cf-domain">Domain of Interest</label>
-            <select class="cf-select" id="cf-domain">
-              <option value="" disabled selected>Select domain</option>
-              <option value="land">Land — UGV</option>
-              <option value="air">Air — UAV</option>
-              <option value="water">Water — ROV / USV</option>
-              <option value="sw">Software &amp; AI</option>
-              <option value="net">Multi-Domain Network</option>
-              <option value="support">Supporting Equipment</option>
-              <option value="all">Full Portfolio</option>
-            </select>
-          </div>
-        </div>
-        <div class="cf-group">
-          <label class="cf-lbl" for="cf-msg">Message</label>
-          <textarea class="cf-textarea" id="cf-msg" placeholder="Describe your requirement or enquiry..."></textarea>
-        </div>
-        <button class="cf-submit" id="form-submit">TRANSMIT ENQUIRY &rarr;</button>
-      </div>
-    </div>
-  </div>
-
-  <div class="cta-band">
-    <div class="cta-h">COMMAND WITH <em>CERTAINTY.</em></div>
-  </div>
-  <footer class="site-footer site-footer--slim">
-    <div class="foot-bottom">
-      <span class="foot-copy">&copy; 2025 Vikasana Systems Pvt. Ltd. · India · All Rights Reserved</span>
-      <span class="foot-copy">info@vikasanasystems.tech</span>
-    </div>
-  </footer>
-</div>
-
-<script src="js/main.js"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>
