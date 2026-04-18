@@ -262,35 +262,6 @@ body::before {
     linear-gradient(to right, rgba(26,28,24,0.7) 0%, transparent 55%);
 }
 
-.hero-grid {
-  position: absolute; inset: 0; z-index: 1;
-  background-image:
-    linear-gradient(rgba(174,182,168,0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(174,182,168,0.04) 1px, transparent 1px);
-  background-size: 56px 56px;
-  mask-image: radial-gradient(ellipse 90% 90% at 30% 50%, black 20%, transparent 75%);
-  -webkit-mask-image: radial-gradient(ellipse 90% 90% at 30% 50%, black 20%, transparent 75%);
-}
-
-.hero-scan {
-  position: absolute; left: 0; right: 0; height: 1px;
-  background: linear-gradient(90deg, transparent 0%, rgba(174,182,168,0.25) 40%, rgba(111,122,96,0.4) 60%, transparent 100%);
-  z-index: 2;
-  animation: scanLine 8s ease-in-out infinite;
-}
-@keyframes scanLine {
-  0%   { top: 60px; opacity: 0; }
-  5%   { opacity: 1; }
-  90%  { opacity: 0.3; }
-  100% { top: 100%; opacity: 0; }
-}
-
-.reticle { position: absolute; width: 36px; height: 36px; z-index: 2; }
-.reticle.tl { top: calc(var(--nav-h)+16px); left: 24px; border-top: 1px solid rgba(240,239,234,0.22); border-left: 1px solid rgba(240,239,234,0.22); }
-.reticle.tr { top: calc(var(--nav-h)+16px); right: 24px; border-top: 1px solid rgba(240,239,234,0.22); border-right: 1px solid rgba(240,239,234,0.22); }
-.reticle.bl { bottom: 60px; left: 24px; border-bottom: 1px solid rgba(240,239,234,0.22); border-left: 1px solid rgba(240,239,234,0.22); }
-.reticle.br { bottom: 60px; right: 24px; border-bottom: 1px solid rgba(240,239,234,0.22); border-right: 1px solid rgba(240,239,234,0.22); }
-
 .hero-content {
   position: relative; z-index: 3;
   padding: 0 48px 80px;
@@ -470,12 +441,13 @@ body::before {
 .kp-bullet { font-family: var(--mono); font-size: 10px; color: var(--olive); margin-top: 2px; flex-shrink: 0; letter-spacing: 0.1em; }
 .kp-text   { font-size: 13px; color: rgba(174,182,168,0.8); line-height: 1.6; font-weight: 300; }
 
-/* ======================================================
-   UxV TYPING ANIMATION
-   Single definition. Structure in HTML:
-   U  [.uxv-mid text]  [.uxv-cursor-block span]  V
-   No ::after on anything. No pseudo-cursors.
-   ====================================================== */
+/* UxV slot — replaced below */
+
+/* ============================================================
+   UxV SLOT MACHINE ANIMATION
+   Words spin upward like a reel — no cursor, no typing
+   Structure: U + [.uxv-slot > .uxv-reel > span×3] + V
+   ============================================================ */
 
 .uxv-domains-wrap { margin-bottom: 12px; }
 
@@ -490,30 +462,46 @@ body::before {
   align-items: baseline;
 }
 
-.uxv-u, .uxv-v { color: var(--off-white); flex-shrink: 0; }
-
-.uxv-mid {
-  color: var(--mid);
-  display: inline-block;
-  /* no min-width — shrinks to actual text, zero gap */
-}
-
-.uxv-cursor-block {
-  display: inline-block;
-  width: 3px;
-  height: 0.68em;
-  background: var(--olive);
-  vertical-align: middle;
-  margin: 0 2px;
+.uxv-u, .uxv-v {
+  color: var(--off-white);
   flex-shrink: 0;
-  animation: uxvBlink 0.85s step-end infinite;
 }
 
-@keyframes uxvBlink {
-  0%, 100% { opacity: 1; }
-  50%       { opacity: 0; }
+/* Clipping window — shows exactly one word height */
+.uxv-slot {
+  display: inline-block;
+  overflow: hidden;
+  /* height = 1 line of the display font */
+  height: 0.9em;
+  position: relative;
+  /* push it up a touch so baseline aligns with U and V */
+  vertical-align: bottom;
+  /* no fixed width — shrinks to widest word naturally */
+  min-width: 2.8ch;
 }
 
+/* The moving reel — contains all three words stacked */
+.uxv-reel {
+  display: flex;
+  flex-direction: column;
+  /* initial position: show first word */
+  transform: translateY(0);
+  /* transition applied via JS for spin */
+  will-change: transform;
+}
+
+.uxv-slide {
+  display: block;
+  /* same height as slot window */
+  height: 0.9em;
+  line-height: 0.9;
+  color: var(--mid);
+  white-space: nowrap;
+  /* each word is exactly one slot height */
+  flex-shrink: 0;
+}
+
+/* Subtitle */
 .uxv-expand {
   font-family: var(--mono);
   font-size: 11px;
@@ -523,6 +511,14 @@ body::before {
   margin-top: 10px;
 }
 #uxv-expand-word { color: var(--mid); }
+
+@media (max-width: 768px) {
+  .uxv-display { font-size: clamp(52px, 15vw, 90px); }
+  .uxv-slot { height: 0.9em; }
+}
+@media (max-width: 480px) {
+  .uxv-display { font-size: 52px; }
+}
 
 /* ======================================================
    DOMAINS PAGE
